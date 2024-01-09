@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import{RegistroService} from 'src/app/services/registro.service'
 
 @Component({
   selector: 'app-abm-de-alumnos',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AbmDeAlumnosComponent {
 
+
+    constructor(registroService: RegistroService){
+
+    }
 }
