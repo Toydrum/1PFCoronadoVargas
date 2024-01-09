@@ -1,0 +1,31 @@
+.navBar {
+  border: rgb(238, 238, 238) solid;
+  background: rgba($color: #d4d4d4, $alpha: 0.95);
+  width: 150px;
+  margin: 0px;
+}
+
+mat-drawer-container{
+  height: 400px;
+}
+
+.opcion{
+  height: 40px;
+  color: rgb(41, 41, 41);
+  border-bottom: rgb(41, 41, 41) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.opcion:hover{
+  background: rgb(240, 240, 240);
+
+}
+
+.colapse{
+  display: flex;
+  color: white;
+  justify-content: end;
+}

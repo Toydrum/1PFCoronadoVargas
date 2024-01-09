@@ -1,0 +1,23 @@
+
+
+.navBar{
+  position: fixed;
+  display: flex;
+  width: 150px;
+  height: auto;
+}
+
+.example-icon{
+  margin: 5px;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  background: white;
+}
+
+.articulosBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

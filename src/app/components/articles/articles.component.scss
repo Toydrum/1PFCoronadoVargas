@@ -1,0 +1,23 @@
+h1{
+  display: flex;
+  justify-content: center;
+}
+
+.articulo{
+  width: 90vw;
+  height: 30vh;
+  overflow-y: scroll;
+  border: rgb(238, 238, 238) solid;
+  border-radius: 6px;
+  background: rgba($color: #d4d4d4, $alpha: 0.9);
+  h2{
+    display: flex;
+    justify-content: center;
+  }
+  .texto{
+    padding: 5px;
+  }
+  margin-top: 3rem;
+
+  padding: 10px;
+}
