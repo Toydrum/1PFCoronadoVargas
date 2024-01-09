@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +16,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { ArticlesComponent } from './components/articles/articles.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ModalFormComponent } from './components/modal-form/modal-form.component';
+import { ModalFormRegisterComponent } from './components/modal-form-register/modal-form-register.component';
 
 
 
@@ -27,6 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaDeAlumnosComponent,
     AbmDeAlumnosComponent,
     ArticlesComponent,
+    ModalFormComponent,
+    ModalFormRegisterComponent,
 
   ],
   imports: [
