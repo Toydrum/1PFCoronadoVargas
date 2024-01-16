@@ -1,0 +1,191 @@
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-secondary"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+>
+  Sign up
+</button>
+
+<!-- Modal -->
+<form [formGroup]="alumnoFormGroup">
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Student Register
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div
+            id="firstnameStudent"
+            class="form-floating mb-3"
+            style="height: 70px"
+          >
+            <input
+              formControlName="firstName"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInputValue" style="font-size: 13px"
+              >name</label
+            >
+          </div>
+          <div
+            id="lastnameStudent"
+            class="form-floating mb-3"
+            style="height: 70px"
+          >
+            <input
+              formControlName="lastName"
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInputValue" style="font-size: 13px"
+              >last name</label
+            >
+          </div>
+          <div id="emailStudent" class="form-floating mb-3" style="height: 70px">
+            <input
+            formControlName="email"
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInputValue" style="font-size: 13px"
+              >email</label
+            >
+          </div>
+          <div id="ageStudent" class="form-floating mb-3" style="width: 200px">
+            <input
+              formControlName="age"
+              type="number"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInputValue" style="font-size: 13px">edad</label>
+          </div>
+
+          <select
+            class="form-select form-select mb-4"
+            aria-label="Default select example"
+            style="font-size: 13px"
+            formControlName="career"
+          >
+            <option selected>career</option>
+            <option  *ngFor="let career of careers">{{career}}</option>
+
+          </select>
+          <hr/>
+          <h2 class="mb-4">Location</h2>
+
+
+          <ng-container formGroupName="location">
+            <div
+              id="address"
+              class="form-floating mb-3"
+              style="height: 70px"
+            >
+              <input
+                formControlName="address"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="address"
+              />
+              <label for="floatingInputValue" style="font-size: 13px"
+                >address</label
+              >
+            </div>
+
+            <div
+              id="country"
+              class="form-floating mb-3"
+              style="height: 70px"
+            >
+              <input
+                formControlName="country"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="address"
+              />
+              <label for="floatingInputValue" style="font-size: 13px"
+                >country</label
+              >
+            </div>
+
+            <div
+              id="state"
+              class="form-floating mb-3"
+              style="height: 70px"
+            >
+              <input
+                formControlName="state"
+                type="text"
+                class="form-control"
+                id="floatingInput"
+                placeholder="state"
+              />
+              <label for="floatingInputValue" style="font-size: 13px"
+                >state</label
+              >
+            </div>
+
+            <div
+              id="zip"
+              class="form-floating mb-3"
+              style="height: 70px"
+            >
+              <input
+                formControlName="zip"
+                type="number"
+                class="form-control"
+                id="floatingInput"
+                placeholder="zip"
+              />
+              <label for="floatingInputValue" style="font-size: 13px"
+                >zip code</label
+              >
+            </div>
+          </ng-container>
+
+
+          <hr/>
+
+          <pre>{{alumnoFormGroup.value | json}}</pre>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

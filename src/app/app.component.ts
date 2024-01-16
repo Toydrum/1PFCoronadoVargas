@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,19 +9,13 @@ export class AppComponent {
   title = '1PFCoronadoVargas';
   showNavBar: boolean = false;
 
-  constructor(){
+  constructor() {}
 
+  openSideBar() {
+    this.showNavBar = !this.showNavBar;
   }
 
-  openSideBar(){
-    this.showNavBar=!this.showNavBar;
-
+  CloseSideBar($event: boolean) {
+    this.showNavBar = $event;
   }
-
-  CloseSideBar($event: boolean){
-    this.showNavBar = $event
-
-  }
-
-
 }

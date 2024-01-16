@@ -1,18 +1,24 @@
-<app-toolbar></app-toolbar>
-<div class="menu">
-  <button
-  (click)="openSideBar()"
-  mat-icon-button
-  class="example-icon"
-  aria-label="Example icon-button with menu icon"
->
-  <mat-icon> menu </mat-icon>
-</button>
-</div>
+<header>
+  <app-toolbar></app-toolbar>
+  <div class="menu">
+    <button
+      (click)="openSideBar()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon> menu </mat-icon>
+    </button>
+  </div>
 
-<app-navbar *ngIf="showNavBar" (booleanEvent)="CloseSideBar($event)" class="navBar"></app-navbar>
-<app-articles class="articulosBox"></app-articles>
-<app-articles class="articulosBox"></app-articles>
-<app-articles class="articulosBox"></app-articles>
-
-
+  <app-navbar
+    *ngIf="showNavBar"
+    (booleanEvent)="CloseSideBar($event)"
+    class="navBar"
+  ></app-navbar>
+</header>
+<main>
+  <app-lista-de-alumnos></app-lista-de-alumnos>
+  <router-outlet></router-outlet>
+</main>
+<footer></footer>

@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { ProfileComponent } from './students/components/profile/profile.component';
+import { ArticlesListComponent } from './articles/components/articles-list/articles-list.component';
+import { ErrorComponent } from './core/components/error/error.component';
+import { ModalFormComponent } from './auth/components/modal-form/modal-form.component';
+const routes: Routes = [
+  { path: '', redirectTo: '/articles', pathMatch: 'full' },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'articles', component: ArticlesListComponent },
+  { path: 'signin', component: ModalFormComponent },
+  { path: '**', component: ErrorComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

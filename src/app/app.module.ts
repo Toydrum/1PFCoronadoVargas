@@ -1,50 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { StudentsComponent } from './components/students/students.component';
-import { ListaDeAlumnosComponent } from './components/lista-de-alumnos/lista-de-alumnos.component';
-import { AbmDeAlumnosComponent } from './components/abm-de-alumnos/abm-de-alumnos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import { ArticlesComponent } from './components/articles/articles.component';
-import { ModalFormComponent } from './components/modal-form/modal-form.component';
-import { ModalFormRegisterComponent } from './components/modal-form-register/modal-form-register.component';
-
-
+import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
+/* Components */
+import { AppComponent } from './app.component';
+import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
+import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { ErrorComponent } from './core/components/error/error.component';
+/* Features Modules */
+import { ArticlesModule } from './articles/articles.module';
+import { AuthModule } from './auth/auth.module';
+import { CoursesModule } from './courses/courses.module';
+import { StudentsModule } from './students/students.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     NavbarComponent,
-    StudentsComponent,
-    ListaDeAlumnosComponent,
-    AbmDeAlumnosComponent,
-    ArticlesComponent,
-    ModalFormComponent,
-    ModalFormRegisterComponent,
-
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    MatButtonModule,
+    SharedModule,
+    ArticlesModule,
+    AuthModule,
+    CoursesModule,
+    StudentsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

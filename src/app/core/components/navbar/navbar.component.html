@@ -1,0 +1,21 @@
+<nav>
+  <mat-drawer-container class="navBar">
+    <div class="colapse">
+      <button class="btn" (click)="closeSideBar()">X</button>
+    </div>
+    <a href="/" [routerLink]="'/'" class="opcion text-decoration-none">Start</a>
+    <a
+      href="/profile"
+      [routerLink]="'/profile'"
+      class="opcion text-decoration-none"
+      >My profile</a
+    >
+    <a class="opcion" class="opcion text-decoration-none">Courses</a>
+    <a
+      href="/profile"
+      [routerLink]="'/profile'"
+      class="opcion text-decoration-none"
+      >About us</a
+    >
+  </mat-drawer-container>
+</nav>
