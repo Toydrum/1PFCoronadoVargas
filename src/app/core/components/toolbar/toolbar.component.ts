@@ -7,5 +7,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
+  showNavBar: boolean = false;
+  openSideBar() {
+    this.showNavBar = !this.showNavBar;
+  }
 
+  CloseSideBar($event: boolean) {
+    this.showNavBar = $event;
+  }
 }

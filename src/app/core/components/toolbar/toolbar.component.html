@@ -1,7 +1,21 @@
 
 <mat-toolbar class="contenedor">
 
-
+  <div class="menu">
+    <button
+      (click)="openSideBar()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+    <app-navbar
+    *ngIf="showNavBar"
+    (booleanEvent)="CloseSideBar($event)"
+    class="navBar"
+  ></app-navbar>
+      <mat-icon> menu </mat-icon>
+    </button>
+  </div>
     <div class="logo"><span>Medieval Uni</span></div>
     <div class="buttons">
       <a href="/signin" [routerLink]="'/signin'" class="text-decoration-none text-reset fs-6">Sign in</a>

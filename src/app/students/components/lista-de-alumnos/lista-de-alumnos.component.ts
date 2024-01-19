@@ -11,6 +11,7 @@ export class ListaDeAlumnosComponent implements OnInit {
   listaDeAlumnos: Student[] =[] ;
   alumnoNuevo: Student = {
     nombre: 'Soy',
+    apellido: 'para ti',
     credencial: 4567,
     semestre: 0,
     carrera: 'querer estar con brina',
@@ -23,7 +24,10 @@ export class ListaDeAlumnosComponent implements OnInit {
 
   ngOnInit(){
 
-    this.studentsService.students$.subscribe((student)=>{})
+    this.studentsService.students$.subscribe(data=>{
+      console.log(data)
+    })
+
   }
 
   agregarStudent(){

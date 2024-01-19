@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 
+
 @NgModule({
   declarations: [ArticlesComponent, ArticlesListComponent],
   imports: [CommonModule, SharedModule],

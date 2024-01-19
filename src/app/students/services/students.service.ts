@@ -7,16 +7,18 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class StudentsService {
-  students: Student[] = []
+  students: Student[] = [
+  ]
   private studentsSource = new BehaviorSubject<Student>(
     {
-    nombre: '',
-    credencial: 0,
-    semestre: 0,
-    carrera: '',
+    nombre: 'josh',
+    apellido: 'Balandrano',
+    credencial: 4235,
+    semestre: 1,
+    carrera: 'Knight',
     materiasDeSemestre: [],
     materiasAcreditadas: []
-    }
+    },
     );
   students$ = this.studentsSource.asObservable();
   constructor() { }
@@ -28,5 +30,7 @@ export class StudentsService {
     }
 
 
-  showCurrentStudents(){}
+  showCurrentStudents(){
+
+  }
 }
