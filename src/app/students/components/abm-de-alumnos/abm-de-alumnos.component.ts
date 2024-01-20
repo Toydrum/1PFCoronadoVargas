@@ -38,7 +38,7 @@ export class AbmDeAlumnosComponent implements AfterViewInit{
   constructor(private studentsService: StudentsService, private renderer: Renderer2)  {
 
     this.studentsService.students$.subscribe(data=>{
-      this.dataSource.push(data)
+      this.dataSource = [...this.dataSource, data];
 
       console.log(this.dataSource)
 
@@ -47,7 +47,7 @@ export class AbmDeAlumnosComponent implements AfterViewInit{
     throw new Error('Method not implemented.');
   }
 
-  addTable(data:Student){
+  addRow(data:Student){
 
   }
 }
