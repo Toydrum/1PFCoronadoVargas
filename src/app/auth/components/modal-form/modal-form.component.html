@@ -1,1 +1,21 @@
-<p>funciona</p>
+<div class="position-absolute top-50 start-50 translate-middle">
+  <mat-card>
+    <mat-card-title class="d-flex justify-content-center m-3">Log In</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="loginForm" class=" d-flex flex-column mb-3">
+        <mat-form-field>
+          <mat-label>Credential</mat-label>
+          <input formControlName="credential" matInput type="text">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput [type]="revealPassword ? 'text' : 'password' ">
+          <button (click)="revealPassword = !revealPassword" matSuffix mat-icon-button>
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </mat-form-field>
+        <button (click)="onSubmit()" type="submit" mat-raised-button>Enter</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -11,7 +11,7 @@ export class CabecerasDirective {
   )
   {
     this.renderer.setStyle(this.elemntRef.nativeElement, 'font-size', '20px')
-    /* console.log('se instanció la directiva', this.elemntRef) */
+
   }
 
 }
