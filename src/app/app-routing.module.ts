@@ -6,12 +6,15 @@ import { ArticlesListComponent } from './articles/components/articles-list/artic
 import { ErrorComponent } from './core/components/error/error.component';
 import { ModalFormComponent } from './auth/components/modal-form/modal-form.component';
 import { AbmDeAlumnosComponent } from './students/components/abm-de-alumnos/abm-de-alumnos.component';
+import { CoursesComponent } from './courses/components/courses.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/articles', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
   { path: 'articles', component: ArticlesListComponent },
   { path: 'signin', component: ModalFormComponent },
   { path: 'abmAlumnos', component: AbmDeAlumnosComponent },
+  { path: 'courses', component: CoursesComponent },
   { path: '**', component: ErrorComponent },
 ];
 
