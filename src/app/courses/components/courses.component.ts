@@ -13,7 +13,8 @@ export class CoursesComponent implements OnInit {
   dataSource: ICourse[] = [];
   displayedColumns: string[] = ['course', 'professor', 'actions'];
   coursesForm: FormGroup;
-
+  courseNa: string | undefined;
+  coursePro: string | undefined;
   course: ICourse | undefined;
 
 
@@ -29,7 +30,7 @@ export class CoursesComponent implements OnInit {
     this._coursesService.courses$.subscribe({
       next: (courses: ICourse[]) => {
         this.dataSource = [...courses];
-        console.log(this.dataSource);
+        /* console.log(this.dataSource); */
       },
     });
   }
@@ -48,7 +49,19 @@ export class CoursesComponent implements OnInit {
 
   selectForEdit() {}
 
+  getDetail(course: ICourse){
 
+    let allCourses = this._coursesService.getCourses()
+
+    allCourses.filter((c)=>{
+        if(c.id == course.id){
+        console.log(c)
+          this.courseNa = c.courseName;
+          this.coursePro = c.teacherName
+        }
+    })
+
+  }
 
   onSubmit() {
     let course: ICourse = {
