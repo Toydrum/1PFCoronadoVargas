@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-modal-form',
@@ -12,7 +13,7 @@ import { RouterLink } from '@angular/router';
 export class ModalFormComponent {
 loginForm: FormGroup;
 revealPassword = false;
-constructor(private fb: FormBuilder){
+constructor(private fb: FormBuilder, private authService: AuthService ){
   this.loginForm = this.fb.group({
     credential: this.fb.control('', [Validators.required, Validators.minLength(4)]),
     password: this.fb.control('', [Validators.required])
@@ -22,10 +23,14 @@ constructor(private fb: FormBuilder){
 
 
 onSubmit(){
+  this.authService.login(this.loginForm.value);
+
   if(this.loginForm.invalid){
     this.loginForm.markAllAsTouched()
   }
-  console.log(this.loginForm.valid)
+  /* console.log(this.loginForm.valid) */
+
+
 }
 
 }

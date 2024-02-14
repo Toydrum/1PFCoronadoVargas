@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StudentsService } from 'src/app/students/services/students.service';
 import { Student } from 'src/app/students/interfaces/student.interface';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-modal-form-register',
@@ -10,10 +11,19 @@ import { Student } from 'src/app/students/interfaces/student.interface';
 })
 export class ModalFormRegisterComponent {
   alumnoFormGroup: FormGroup;
-  careers: string[] = ['Knight', 'Archer', 'Royal Guard', 'Artillery', 'Engineer']
+  careers: string[] = [
+    'Knight',
+    'Archer',
+    'Royal Guard',
+    'Artillery',
+    'Engineer',
+  ];
 
-
-  constructor(private formBuilder: FormBuilder, private studentsService: StudentsService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private studentsService: StudentsService,
+    private authService: AuthService
+  ) {
     this.alumnoFormGroup = this.formBuilder.group({
       firstName: this.formBuilder.control(''),
       lastName: this.formBuilder.control(''),
@@ -26,29 +36,27 @@ export class ModalFormRegisterComponent {
         country: this.formBuilder.control(''),
         state: this.formBuilder.control(''),
         zip: this.formBuilder.control(null),
-      })
+      }),
     });
-    console.log(this.alumnoFormGroup.value)
+   /*  console.log(this.alumnoFormGroup.value); */
   }
 
-  registerStudent(){
-    const min = Math.ceil(4000);
-    const max = Math.floor(9000)
-    const num = (Math.random()*(max-min+1)+min);
-    function cred (num:number){
+  registerStudent() {
 
-      return Math.round(num)
-    }
     const newStudent = {
       nombre: this.alumnoFormGroup.value.firstName,
       apellido: this.alumnoFormGroup.value.lastName,
-      credencial: cred(num),
       semestre: 1,
       carrera: this.alumnoFormGroup.value.career,
-    }
-    console.log(newStudent)
+    };
 
-    this.studentsService.addStudent(newStudent)
+    console.log(newStudent);
 
+    this.studentsService.addStudent(newStudent).subscribe(
+      (response: Student) => {
+        console.log('Solicitud completada:', response);
+        // Hacer algo con la respuesta
+      });
+    this.authService.register(newStudent);
   }
 }

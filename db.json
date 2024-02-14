@@ -1,0 +1,43 @@
+{
+  "students": [
+    {
+      "nombre": "sam",
+      "apellido": "Balandrano",
+      "credencial": 4244,
+      "semestre": 1,
+      "carrera": "Archer",
+      "materiasDeSemestre": [],
+      "materiasAcreditadas": [],
+      "id": "808c"
+    },
+    {
+      "nombre": "angela",
+      "apellido": "Miramontes",
+      "credencial": 6458,
+      "semestre": 1,
+      "carrera": "Royal Guard",
+      "materiasDeSemestre": [],
+      "materiasAcreditadas": [],
+      "id": "c0a0"
+    },
+    {
+      "id": "6722",
+      "nombre": "ccc",
+      "apellido": "cccc",
+      "semestre": 1,
+      "carrera": "Archer",
+      "password": "mypassword",
+      "credencial": 4291
+    },
+    {
+      "id": "31f4",
+      "nombre": "test",
+      "apellido": "test",
+      "semestre": 1,
+      "carrera": "Royal Guard",
+      "password": "mypassword",
+      "credencial": 7161
+    }
+  ],
+  "courses": []
+}

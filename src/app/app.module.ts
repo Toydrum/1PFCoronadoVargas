@@ -13,6 +13,8 @@ import { ArticlesModule } from './articles/articles.module';
 import { AuthModule } from './auth/auth.module';
 import { CoursesModule } from './courses/courses.module';
 import { StudentsModule } from './students/students.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { StudentsModule } from './students/students.module';
     AuthModule,
     CoursesModule,
     StudentsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

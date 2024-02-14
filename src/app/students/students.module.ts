@@ -8,7 +8,10 @@ import { StudentsComponent } from './components/students/students.component';
 import { ListaDeAlumnosComponent } from './components/lista-de-alumnos/lista-de-alumnos.component';
 import { AbmDeAlumnosComponent } from './components/abm-de-alumnos/abm-de-alumnos.component';
 import { ProfileComponent } from './components/profile/profile.component';
+
 import { CabecerasDirective } from '../shared/directives/cabeceras.directive';
+
+import { StudentsRoutingModule } from './students-routing-module';
 
 @NgModule({
   declarations: [
@@ -16,17 +19,15 @@ import { CabecerasDirective } from '../shared/directives/cabeceras.directive';
     ListaDeAlumnosComponent,
     AbmDeAlumnosComponent,
     ProfileComponent,
-
-
   ],
-  imports: [CommonModule, SharedModule, MatButtonModule,MatTableModule],
+  imports: [CommonModule, SharedModule, MatButtonModule, MatTableModule, StudentsRoutingModule],
   exports: [
     StudentsComponent,
     ListaDeAlumnosComponent,
     AbmDeAlumnosComponent,
     ProfileComponent,
     UpperCasePipe,
-    CabecerasDirective
+    CabecerasDirective,
   ],
 })
 export class StudentsModule {}

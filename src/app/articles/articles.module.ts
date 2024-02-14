@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
+import { ArticlesRoutingModule } from './articles-routing-module';
 /* Components */
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticlesListComponent } from './components/articles-list/articles-list.component';
@@ -8,7 +9,7 @@ import { ArticlesListComponent } from './components/articles-list/articles-list.
 
 @NgModule({
   declarations: [ArticlesComponent, ArticlesListComponent],
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, SharedModule, ArticlesRoutingModule],
   exports: [ArticlesComponent, ArticlesListComponent],
 })
 export class ArticlesModule {}
