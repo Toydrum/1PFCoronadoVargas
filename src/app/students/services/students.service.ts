@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Student } from '../interfaces/student.interface';
-import { BehaviorSubject, catchError, mergeMap, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, mergeMap, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -33,6 +33,6 @@ export class StudentsService {
   getCurrentStudents() {
     return (this.httpClient.get<Student[]>('http://localhost:3000/students')
     );
-    /* console.log(this.students) */
+    console.log(this.getCurrentStudents)
   }
 }

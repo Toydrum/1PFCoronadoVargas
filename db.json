@@ -6,6 +6,7 @@
       "credencial": 4244,
       "semestre": 1,
       "carrera": "Archer",
+      "password": "mypassword",
       "materiasDeSemestre": [],
       "materiasAcreditadas": [],
       "id": "808c"
@@ -16,6 +17,7 @@
       "credencial": 6458,
       "semestre": 1,
       "carrera": "Royal Guard",
+      "password": "mypassword",
       "materiasDeSemestre": [],
       "materiasAcreditadas": [],
       "id": "c0a0"

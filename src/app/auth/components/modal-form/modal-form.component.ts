@@ -15,7 +15,7 @@ loginForm: FormGroup;
 revealPassword = false;
 constructor(private fb: FormBuilder, private authService: AuthService ){
   this.loginForm = this.fb.group({
-    credential: this.fb.control('', [Validators.required, Validators.minLength(4)]),
+    credencial: this.fb.control(Number, [Validators.required, Validators.minLength(4)]),
     password: this.fb.control('', [Validators.required])
   })
 

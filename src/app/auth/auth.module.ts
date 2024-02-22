@@ -6,10 +6,12 @@ import { AuthRoutingModule } from './auth-routing-module';
 
 import { ModalFormComponent } from './components/modal-form/modal-form.component';
 import { ModalFormRegisterComponent } from './components/modal-form-register/modal-form-register.component';
+import { StudentsService } from '../students/services/students.service';
 
 @NgModule({
   declarations: [ModalFormComponent, ModalFormRegisterComponent],
   imports: [CommonModule, SharedModule, AuthRoutingModule],
   exports: [ModalFormComponent, ModalFormRegisterComponent],
+  providers: [StudentsService]
 })
 export class AuthModule {}
