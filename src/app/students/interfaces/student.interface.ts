@@ -6,6 +6,7 @@ export interface Student {
   semestre: number,
   carrera: string,
   password?: string,
+  role?: string,
   materiasDeSemestre?: string[],
   materiasAcreditadas?: string[],
 

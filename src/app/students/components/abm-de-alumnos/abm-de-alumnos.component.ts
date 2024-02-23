@@ -11,7 +11,7 @@ import { Student } from '../../interfaces/student.interface';
 })
 export class AbmDeAlumnosComponent {
   /* students: Student[] = []; */
-  displayedColumns: string[] = ['course', 'name', 'credential', 'semester'];
+  displayedColumns: string[] = ['course', 'name', 'credential', 'semester','role'];
   dataSource: Student[] = [];
 
 

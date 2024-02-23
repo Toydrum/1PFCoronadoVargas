@@ -23,6 +23,7 @@ export class StudentsService {
       ...student,
       password: 'mypassword',
       credencial: cred(num),
+      role:"user"
     };
     console.log(addedStudentPassword)
     return this.httpClient.post<Student>('http://localhost:3000/students', addedStudentPassword)

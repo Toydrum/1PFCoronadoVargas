@@ -7,6 +7,7 @@
       "semestre": 1,
       "carrera": "Archer",
       "password": "mypassword",
+      "role": "admin",
       "materiasDeSemestre": [],
       "materiasAcreditadas": [],
       "id": "808c"
@@ -18,6 +19,7 @@
       "semestre": 1,
       "carrera": "Royal Guard",
       "password": "mypassword",
+      "role": "admin",
       "materiasDeSemestre": [],
       "materiasAcreditadas": [],
       "id": "c0a0"
@@ -29,6 +31,7 @@
       "semestre": 1,
       "carrera": "Archer",
       "password": "mypassword",
+      "role": "user",
       "credencial": 4291
     },
     {
@@ -38,6 +41,7 @@
       "semestre": 1,
       "carrera": "Royal Guard",
       "password": "mypassword",
+      "role": "user",
       "credencial": 7161
     }
   ],

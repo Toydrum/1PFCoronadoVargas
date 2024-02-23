@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { Student } from 'src/app/students/interfaces/student.interface';
 import { StudentsService } from 'src/app/students/services/students.service';
 
@@ -7,9 +8,8 @@ import { StudentsService } from 'src/app/students/services/students.service';
   providedIn: 'root',
 })
 export class AuthService {
-  authStudent: Student | undefined = undefined;
-  students: Student[] = [];
-
+  private authStudentSubject = new BehaviorSubject<Student | undefined>(undefined);
+  authStudent$ = this.authStudentSubject.asObservable();
   constructor(
     private router: Router,
     private studentsService: StudentsService
@@ -18,20 +18,20 @@ export class AuthService {
   register(student: Student): void {
     if (student) {
       this.router.navigate(['/students/abmAlumnos']);
-      this.authStudent = student;
+      this.authStudentSubject.next(student)
     }
   }
 
   login(logger: Student): void {
-    this.studentsService.getCurrentStudents().subscribe((v) => {
+   this.studentsService.getCurrentStudents().subscribe((v) => {
       let student: Student | undefined = v.find((student) => {
-        console.log(typeof student.credencial);
-          console.log(typeof logger.credencial);
+
           return student.credencial === logger.credencial;
       });
-      this.authStudent = student
+      this.authStudentSubject.next(student)
+      if(!!student){
       this.router.navigate(['/students/abmAlumnos']);
-      console.log(this.authStudent);
+      this.authStudent$.subscribe({next:(s)=>{console.log(s)}})}
     });
   }
 }
