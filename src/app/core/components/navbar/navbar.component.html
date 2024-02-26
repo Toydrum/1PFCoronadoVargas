@@ -1,32 +1,26 @@
 <nav>
   <mat-drawer-container class="navBar">
-   <!--  <div class="colapse">
+    <!--  <div class="colapse">
       <button class="btn" (click)="closeSideBar()">X</button>
     </div> -->
-    <a href="/articles" [routerLink]="'/articles'" class="opcion text-decoration-none">Start</a>
     <a
-
-      [routerLink]="'/students/profile'"
+      href="/articles"
+      [routerLink]="'/articles'"
       class="opcion text-decoration-none"
+      >Start</a
+    >
+    <a [routerLink]="'/students/profile'" class="opcion text-decoration-none"
       >My profile</a
     >
-    <a
-
-      [routerLink]="'/students/abmAlumnos'"
-      class="opcion text-decoration-none"
+    <a [routerLink]="'/students/abmAlumnos'" class="opcion text-decoration-none"
       >Students</a
     >
-    <a
-
-      [routerLink]="'/courses'"
-      class="opcion text-decoration-none"
-      >Courses</a
-    >
-    <a
-
-      [routerLink]="'/profile'"
-      class="opcion text-decoration-none"
+    <a [routerLink]="'/courses'" class="opcion text-decoration-none">Courses</a>
+    <a [routerLink]="'/profile'" class="opcion text-decoration-none"
       >About us</a
     >
+    <button (click)="logout()" mat-button class="btn btn-warning">
+      Logout
+    </button>
   </mat-drawer-container>
 </nav>

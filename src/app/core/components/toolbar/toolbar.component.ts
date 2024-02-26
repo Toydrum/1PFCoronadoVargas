@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Student } from 'src/app/students/interfaces/student.interface';
+/* Store */
+import { Store } from '@ngrx/store';
+import { AppState } from '../../state/app.state';
+import { identitySelector } from 'src/app/auth/state/auth.selectors';
+import { AuthActions } from 'src/app/auth/state/auth.actions';
 
 /* import {MatToolbarModule} from '@angular/material/toolbar'; */
 
@@ -10,17 +15,19 @@ import { Student } from 'src/app/students/interfaces/student.interface';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent {
-  activeUser: Student | undefined;
-  user: Subscription | Student | undefined =
-    this.authService.authStudent$.subscribe({
-      next: (s) => {
-        this.activeUser = s;
-        this.buttonsOff = true;
+export class ToolbarComponent implements OnInit {
+  public activeUser: Student | undefined;
+  constructor(private _store: Store<AppState>) {
+    this._store.select(identitySelector).subscribe({
+      next: (i: Student | undefined) => {
+        this.activeUser = i;
       },
     });
-  buttonsOff = false;
-  constructor(private authService: AuthService) {}
+  }
+
+  ngOnInit(): void {
+    this._store.dispatch(AuthActions.loadAuth());
+  }
 
   showNavBar: boolean = false;
   openSideBar() {

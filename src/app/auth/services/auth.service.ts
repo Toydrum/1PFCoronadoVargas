@@ -1,37 +1,47 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+/* RxJs */
+import { Subject } from 'rxjs';
+/* interfaces */
 import { Student } from 'src/app/students/interfaces/student.interface';
+/* Services */
 import { StudentsService } from 'src/app/students/services/students.service';
+/* Store */
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/core/state/app.state';
+import { AuthActions } from '../state/auth.actions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private authStudentSubject = new BehaviorSubject<Student | undefined>(undefined);
-  authStudent$ = this.authStudentSubject.asObservable();
   constructor(
     private router: Router,
-    private studentsService: StudentsService
+    private studentsService: StudentsService,
+    private _store: Store<AppState>
   ) {}
 
   register(student: Student): void {
-    if (student) {
-      this.router.navigate(['/students/abmAlumnos']);
-      this.authStudentSubject.next(student)
-    }
+    this.commitToStore(student);
   }
 
   login(logger: Student): void {
-   this.studentsService.getCurrentStudents().subscribe((v) => {
-      let student: Student | undefined = v.find((student) => {
-
+    this.studentsService.getCurrentStudents().subscribe({
+      next: (v) => {
+        let student: Student | undefined = v.find((student) => {
           return student.credencial === logger.credencial;
-      });
-      this.authStudentSubject.next(student)
-      if(!!student){
-      this.router.navigate(['/students/abmAlumnos']);
-      this.authStudent$.subscribe({next:(s)=>{console.log(s)}})}
+        });
+        this.commitToStore(student);
+      },
     });
+  }
+
+  commitToStore(student: Student | undefined): void {
+    this._store.dispatch(
+      AuthActions.loadAuthSuccess({ loaded: true, identity: student })
+    );
+    if (!!student) {
+      this.router.navigate(['/students/abmAlumnos']);
+    }
   }
 }

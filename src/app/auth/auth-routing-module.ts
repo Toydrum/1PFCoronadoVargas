@@ -6,9 +6,8 @@ const routes: Routes = [
   {
     path: 'login',
     component: ModalFormComponent,
-
   },
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

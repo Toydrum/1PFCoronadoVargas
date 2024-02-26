@@ -18,7 +18,7 @@
   </div>
     <div class="logo"><span>Medieval Uni</span></div>
     <div>{{activeUser?.nombre}} {{activeUser?.apellido}}</div>
-    <div class="buttons" *ngIf="!buttonsOff">
+    <div class="buttons" *ngIf="!activeUser">
       <a href="/auth/login" [routerLink]="'/auth/login'" class="text-decoration-none text-reset fs-6">Sign in</a>
       <app-modal-form-register></app-modal-form-register>
     </div>
