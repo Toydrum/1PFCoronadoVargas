@@ -22,7 +22,9 @@ export class AuthService {
   ) {}
 
   register(student: Student): void {
-    this.commitToStore(student);
+    this._store.dispatch(
+      AuthActions.loadAuthSuccess({ loaded: true, identity: student })
+    );
   }
 
   login(logger: Student): void {

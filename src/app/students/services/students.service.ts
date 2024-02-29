@@ -34,6 +34,5 @@ export class StudentsService {
   getCurrentStudents() {
     return (this.httpClient.get<Student[]>('http://localhost:3000/students')
     );
-    console.log(this.getCurrentStudents)
   }
 }

@@ -43,7 +43,94 @@
       "password": "mypassword",
       "role": "user",
       "credencial": 7161
+    },
+    {
+      "id": "20a7",
+      "nombre": "Gustavo",
+      "apellido": "Fernandez",
+      "semestre": 1,
+      "carrera": "Engineer",
+      "password": "mypassword",
+      "credencial": 7419,
+      "role": "user"
+    },
+    {
+      "id": "6d19",
+      "nombre": "Gabriela",
+      "apellido": "Ramos",
+      "semestre": 1,
+      "carrera": "Knight",
+      "password": "mypassword",
+      "credencial": 8117,
+      "role": "user"
+    },
+    {
+      "id": "af4d",
+      "nombre": "Karen ",
+      "apellido": "Cano",
+      "semestre": 1,
+      "carrera": "Artillery",
+      "password": "mypassword",
+      "credencial": 5273,
+      "role": "user"
+    },
+    {
+      "id": "8d95",
+      "nombre": "Manuel",
+      "apellido": "Pacheco",
+      "semestre": 1,
+      "carrera": "Royal Guard",
+      "password": "mypassword",
+      "credencial": 5653,
+      "role": "user"
     }
   ],
-  "courses": []
+  "courses": [
+    {
+      "id": "8d64",
+      "courseName": "Infantry",
+      "students": [
+        4354,
+        2345,
+        5387
+      ],
+      "teacherName": "Sir Gregor"
+    },
+    {
+      "id": "",
+      "courseName": "Cavalry",
+      "students": [
+        4686,
+        6667,
+        3937
+      ],
+      "teacherName": "Sir Mclane"
+    },
+    {
+      "id": "",
+      "courseName": "Squire",
+      "students": [
+        6664,
+        6227,
+        5437
+      ],
+      "teacherName": "Sir Hammer"
+    },
+    {
+      "id": "",
+      "courseName": "Blacksmith",
+      "students": [
+        6664,
+        6227,
+        5437
+      ],
+      "teacherName": "Sir Fire"
+    },
+    {
+      "id": "080e",
+      "courseName": "General",
+      "teacherName": "Sir Tactics",
+      "students": []
+    }
+  ]
 }

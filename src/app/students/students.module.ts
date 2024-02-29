@@ -12,6 +12,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CabecerasDirective } from '../shared/directives/cabeceras.directive';
 
 import { StudentsRoutingModule } from './students-routing-module';
+import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { StudentsRoutingModule } from './students-routing-module';
     AbmDeAlumnosComponent,
     ProfileComponent,
   ],
-  imports: [CommonModule, SharedModule, MatButtonModule, MatTableModule, StudentsRoutingModule],
+  imports: [CommonModule, SharedModule, MatButtonModule, MatTableModule, StudentsRoutingModule, AuthModule],
   exports: [
     StudentsComponent,
     ListaDeAlumnosComponent,

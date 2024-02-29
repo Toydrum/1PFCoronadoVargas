@@ -10,7 +10,7 @@ import { Student } from '../../interfaces/student.interface';
   styleUrls: ['./abm-de-alumnos.component.scss'],
 })
 export class AbmDeAlumnosComponent {
-  /* students: Student[] = []; */
+
   displayedColumns: string[] = ['course', 'name', 'credential', 'semester','role'];
   dataSource: Student[] = [];
 
@@ -20,6 +20,10 @@ export class AbmDeAlumnosComponent {
 
   }
 
+  getStudents(){
+    this.studentsService.getCurrentStudents().subscribe({next: (s:Student[])=> {this.dataSource = [...s]}})
+
+  }
 
 
 

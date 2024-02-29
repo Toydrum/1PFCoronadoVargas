@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ICourse } from '../interfaces/course.interface';
 import { CoursesService } from '../courses.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-courses',
@@ -10,8 +10,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
+  displayedColumns: string[] = ['course', 'professor','students', 'actions'];
   dataSource: ICourse[] = [];
-  displayedColumns: string[] = ['course', 'professor', 'actions'];
   coursesForm: FormGroup;
   courseNa: string | undefined;
   coursePro: string | undefined;
@@ -27,15 +27,12 @@ export class CoursesComponent implements OnInit {
       courseName: this.fb.control(''),
       teacherName: this.fb.control(''),
     });
-    this._coursesService.courses$.subscribe({
-      next: (courses: ICourse[]) => {
-        this.dataSource = [...courses];
-        /* console.log(this.dataSource); */
-      },
-    });
+    this._coursesService.getCourses().subscribe({next:(c)=>{this.dataSource = [...c] ;console.log(this.dataSource)}})
+
+
   }
   ngOnInit(): void {
-    this._coursesService.getCourses();
+    ;
   }
 
   deleteCourse(course: ICourse) {
@@ -51,15 +48,29 @@ export class CoursesComponent implements OnInit {
 
   getDetail(course: ICourse){
 
-    let allCourses = this._coursesService.getCourses()
+    this._coursesService.getCourses().subscribe({
+      next:(r)=>{
+        let courseArray: ICourse[];
+        r.filter((c)=>{
+          if(c.id == course.id){
+          console.log(c)
+            this.courseNa = c.courseName;
+            this.coursePro = c.teacherName
+          }
+      })
+      }
+    })
 
-    allCourses.filter((c)=>{
+
+
+
+    /* .filter((c)=>{
         if(c.id == course.id){
         console.log(c)
           this.courseNa = c.courseName;
           this.coursePro = c.teacherName
         }
-    })
+    }) */
 
   }
 
@@ -68,21 +79,22 @@ export class CoursesComponent implements OnInit {
       courseName: this.coursesForm.value.courseName,
       teacherName: this.coursesForm.value.teacherName,
     };
+    this._coursesService.addCourse(course)
+    console.log(course);
     if(this.course && this.course.id){
       course.id = this.course.id
     }
     if(this.course && this.course.students){
       course.students = this.course.students
     }
-    console.log(this.course);
 
-      if (!!course.id) {
+      /* if (!!course.id) {
         console.log(course.id);
         this._coursesService.editCourse(course);
       } else {
         console.log('no id');
         this._coursesService.addCourse(course);
-      }
+      } */
       this.coursesForm.reset();
       /* this.course = undefined */
 

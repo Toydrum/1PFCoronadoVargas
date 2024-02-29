@@ -1,7 +1,7 @@
 
 
 export interface ICourse {
-  id?: number,
+  id?: string,
   courseName: string,
   students?: number[],
   teacherName: string,

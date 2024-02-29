@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ICourse } from './interfaces/course.interface';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -10,19 +11,19 @@ export class CoursesService {
 
 
   courses: ICourse[] = [{
-    id: 1,
+    id: "",
     courseName:'Infantry',
     students:[4832,5678,6637],
     teacherName: 'Sir Gregor',
   },
   {
-    id: 2,
+    id: "",
     courseName:'Cavalry',
     students:[4686,6667,3937],
     teacherName: 'Sir Mclane',
   },
   {
-    id:3,
+    id:"",
     courseName:'Squire',
     students:[6664,6227,5437],
     teacherName: 'Sir Hammer',
@@ -31,29 +32,28 @@ export class CoursesService {
 
   courses$: Subject<ICourse[]> = new Subject<ICourse[]>()
 
-  constructor() {
-    this.courses$.next(this.courses)
+  constructor(private http: HttpClient) {
+
 
   }
 
   getCourses(){
-    this.courses$.next(this.courses)
-    return this.courses;
+
+    return this.http.get<ICourse[]>('http://localhost:3000/courses')
   }
 
-  getCourses$(){
-
-    this.courses$.next(this.courses)
-
-    return this.courses$;
-  }
 
   addCourse(course: ICourse){
-    if(!course.id){
-      course.id= this.courses.length +1
+    let newCourse = {
+      ...course,
+      students:[]
     }
-    this.courses.push(course);
-    this.courses$.next(this.courses)
+    console.log(newCourse)
+    return this.http.post<ICourse>('http://localhost:3000/courses', newCourse).subscribe({
+      next:(r)=>{console.log(r)}
+    })
+
+
   }
 
   deleteCourse(course: ICourse){
