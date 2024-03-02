@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-/* RxJs */
-import { Subject } from 'rxjs';
 /* interfaces */
 import { Student } from 'src/app/students/interfaces/student.interface';
 /* Services */
@@ -29,10 +27,12 @@ export class AuthService {
 
   login(logger: Student): void {
     this.studentsService.getCurrentStudents().subscribe({
-      next: (v) => {
-        let student: Student | undefined = v.find((student) => {
-          return student.credencial === logger.credencial;
-        });
+      next: (v: Student[] | undefined) => {
+        let student: Student | undefined = !!v
+          ? v.find((student: Student) => {
+              return student.credencial === logger.credencial;
+            })
+          : undefined;
         this.commitToStore(student);
       },
     });

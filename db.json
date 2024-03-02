@@ -63,11 +63,21 @@
       "password": "mypassword",
       "credencial": 5653,
       "role": "user"
+    },
+    {
+      "id": "2581",
+      "nombre": "Alec Jonathan Montaño Romero",
+      "apellido": "Alec Jonathan Montaño Romero",
+      "semestre": 1,
+      "carrera": "Engineer",
+      "password": "mypassword",
+      "credencial": 8621,
+      "role": "user"
     }
   ],
   "courses": [
     {
-      "id": "",
+      "id": "69",
       "courseName": "Cavalry",
       "students": [
         4686,
@@ -77,7 +87,7 @@
       "teacherName": "Sir Mclane"
     },
     {
-      "id": "",
+      "id": "420",
       "courseName": "Squire",
       "students": [
         6664,
@@ -87,7 +97,7 @@
       "teacherName": "Sir Hammer"
     },
     {
-      "id": "",
+      "id": "ju8",
       "courseName": "Blacksmith",
       "students": [
         6664,
@@ -97,10 +107,43 @@
       "teacherName": "Sir Fire"
     },
     {
-      "id": "080e",
       "courseName": "General",
       "teacherName": "Sir Tactics",
-      "students": []
+      "id": "080e"
+    },
+    {
+      "id": "718c",
+      "courseName": "Priest",
+      "teacherName": "Father Gayman",
+      "students": [
+        null
+      ]
+    },
+    {
+      "id": "c01e",
+      "courseName": "Rogue",
+      "teacherName": "Catassassing",
+      "students": [
+        null
+      ]
+    },
+    {
+      "id": "c030",
+      "courseName": "Warlock",
+      "teacherName": "Satan",
+      "students": [
+        6458,
+        4244
+      ]
+    },
+    {
+      "id": "52cb",
+      "courseName": "Wizzardry",
+      "teacherName": "Dumbledor",
+      "students": [
+        4244,
+        7419
+      ]
     }
   ]
 }

@@ -5,7 +5,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 
 import { StudentsComponent } from './components/students/students.component';
-import { ListaDeAlumnosComponent } from './components/lista-de-alumnos/lista-de-alumnos.component';
 import { AbmDeAlumnosComponent } from './components/abm-de-alumnos/abm-de-alumnos.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
@@ -15,16 +14,17 @@ import { StudentsRoutingModule } from './students-routing-module';
 import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
-  declarations: [
-    StudentsComponent,
-    ListaDeAlumnosComponent,
-    AbmDeAlumnosComponent,
-    ProfileComponent,
+  declarations: [StudentsComponent, AbmDeAlumnosComponent, ProfileComponent],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MatButtonModule,
+    MatTableModule,
+    StudentsRoutingModule,
+    AuthModule,
   ],
-  imports: [CommonModule, SharedModule, MatButtonModule, MatTableModule, StudentsRoutingModule, AuthModule],
   exports: [
     StudentsComponent,
-    ListaDeAlumnosComponent,
     AbmDeAlumnosComponent,
     ProfileComponent,
     UpperCasePipe,
