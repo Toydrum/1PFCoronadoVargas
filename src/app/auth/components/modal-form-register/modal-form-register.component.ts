@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StudentsService } from 'src/app/students/services/students.service';
 import { Student } from 'src/app/students/interfaces/student.interface';
@@ -18,6 +18,9 @@ export class ModalFormRegisterComponent {
     'Artillery',
     'Engineer',
   ];
+  @Output() registered: EventEmitter<Student | undefined> = new EventEmitter<
+    Student | undefined
+  >();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,11 +41,10 @@ export class ModalFormRegisterComponent {
         zip: this.formBuilder.control(null),
       }),
     });
-   /*  console.log(this.alumnoFormGroup.value); */
+    /*  console.log(this.alumnoFormGroup.value); */
   }
 
   registerStudent() {
-
     const newStudent = {
       nombre: this.alumnoFormGroup.value.firstName,
       apellido: this.alumnoFormGroup.value.lastName,
@@ -52,9 +54,11 @@ export class ModalFormRegisterComponent {
 
     console.log(newStudent);
 
-    this.studentsService.addStudent(newStudent).subscribe(
-      (response: Student) => {
+    this.studentsService
+      .addStudent(newStudent)
+      .subscribe((response: Student | undefined) => {
         console.log('Solicitud completada:', response);
+        this.registered.emit(response);
         // Hacer algo con la respuesta
       });
     this.authService.register(newStudent);

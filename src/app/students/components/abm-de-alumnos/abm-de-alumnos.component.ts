@@ -1,8 +1,7 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { StudentsService } from '../../services/students.service';
 
 import { Student } from '../../interfaces/student.interface';
-
 
 @Component({
   selector: 'app-abm-de-alumnos',
@@ -10,25 +9,22 @@ import { Student } from '../../interfaces/student.interface';
   styleUrls: ['./abm-de-alumnos.component.scss'],
 })
 export class AbmDeAlumnosComponent {
-
-  displayedColumns: string[] = ['course', 'name', 'credential', 'semester','role'];
   dataSource: Student[] = [];
 
-
   constructor(private studentsService: StudentsService) {
-    this.studentsService.getCurrentStudents().subscribe({next: (s:Student[])=> {this.dataSource = [...s]}})
-
+    this.getStudents();
   }
 
-  getStudents(){
-    this.studentsService.getCurrentStudents().subscribe({next: (s:Student[])=> {this.dataSource = [...s]}})
-
+  getStudents() {
+    this.studentsService.getCurrentStudents().subscribe({
+      next: (s: Student[] | undefined) => {
+        if (!!s) {
+          this.dataSource = [...s];
+        } else {
+          this.dataSource = [];
+        }
+        console.log(this.dataSource);
+      },
+    });
   }
-
-
-
-
-;
-  }
-
-
+}

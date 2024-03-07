@@ -14,16 +14,17 @@ import { StudentsRoutingModule } from './students-routing-module';
 import { AuthModule } from '../auth/auth.module';
 
 @NgModule({
-  declarations: [
-    StudentsComponent,
-
-    AbmDeAlumnosComponent,
-    ProfileComponent,
+  declarations: [StudentsComponent, AbmDeAlumnosComponent, ProfileComponent],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MatButtonModule,
+    MatTableModule,
+    StudentsRoutingModule,
+    AuthModule,
   ],
-  imports: [CommonModule, SharedModule, MatButtonModule, MatTableModule, StudentsRoutingModule, AuthModule],
   exports: [
     StudentsComponent,
-
     AbmDeAlumnosComponent,
     ProfileComponent,
     UpperCasePipe,
