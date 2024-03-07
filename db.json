@@ -66,8 +66,8 @@
     },
     {
       "id": "2581",
-      "nombre": "Alec Jonathan Montaño Romero",
-      "apellido": "Alec Jonathan Montaño Romero",
+      "nombre": "Alec Jonathan",
+      "apellido": "Montaño Romero",
       "semestre": 1,
       "carrera": "Engineer",
       "password": "mypassword",
@@ -77,14 +77,13 @@
   ],
   "courses": [
     {
-      "id": "69",
       "courseName": "Cavalry",
+      "teacherName": "Sir Mclane",
       "students": [
-        4686,
-        6667,
-        3937
+        4244,
+        5653
       ],
-      "teacherName": "Sir Mclane"
+      "id": "69"
     },
     {
       "id": "420",
@@ -137,12 +136,28 @@
       ]
     },
     {
-      "id": "52cb",
       "courseName": "Wizzardry",
       "teacherName": "Dumbledor",
       "students": [
         4244,
         7419
+      ],
+      "id": "52cb"
+    },
+    {
+      "courseName": "carpenter",
+      "teacherName": "Sir Cloac",
+      "students": [
+        4244
+      ],
+      "id": "9f91"
+    },
+    {
+      "id": "8d62",
+      "courseName": "witchcraft",
+      "teacherName": "sir faust",
+      "students": [
+        8117
       ]
     }
   ]

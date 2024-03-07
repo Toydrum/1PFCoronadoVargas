@@ -115,9 +115,10 @@ export class CoursesComponent implements OnInit {
     let students: number[] = [];
     let notStudents: number[] = [];
     if (!!this.coursesForm.value.students) {
+      console.log(this.coursesForm.value.students)
       students = this.coursesForm.value.students
-        .trim()
-        .split(',')
+        //.trim()
+        //.split(',')
         .map((s: string): number => parseInt(s))
         .filter((s: number) => {
           if (!this.students.includes(s)) {
