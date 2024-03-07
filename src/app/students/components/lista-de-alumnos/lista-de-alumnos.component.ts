@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/* import { Component, OnInit } from '@angular/core';
 import { StudentsService } from '../../services/students.service';
 import { Student } from '../../interfaces/student.interface';
 
@@ -37,3 +37,4 @@ export class ListaDeAlumnosComponent implements OnInit {
   }
 
 }
+ */

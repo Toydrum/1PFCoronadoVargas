@@ -7,9 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class StudentsService {
-  students: Student[] = [];
-  private studentsSource = new BehaviorSubject<Student[]>([...this.students]);
-  students$ = this.studentsSource.asObservable();
+
   constructor(private httpClient: HttpClient) {}
 
   addStudent(student: Student) {

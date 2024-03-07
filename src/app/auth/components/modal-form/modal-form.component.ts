@@ -28,7 +28,7 @@ onSubmit(){
   if(this.loginForm.invalid){
     this.loginForm.markAllAsTouched()
   }
-  /* console.log(this.loginForm.valid) */
+
 
 
 }

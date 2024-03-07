@@ -51,7 +51,7 @@ export class CoursesComponent implements OnInit {
 
   }
 
-  selectForEdit() {}
+
 
   getDetail(course: ICourse) {
     this._coursesService.getCourses().subscribe({
