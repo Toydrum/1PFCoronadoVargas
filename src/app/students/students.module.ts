@@ -12,9 +12,10 @@ import { CabecerasDirective } from '../shared/directives/cabeceras.directive';
 
 import { StudentsRoutingModule } from './students-routing-module';
 import { AuthModule } from '../auth/auth.module';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
-  declarations: [StudentsComponent, AbmDeAlumnosComponent, ProfileComponent],
+  declarations: [StudentsComponent, AbmDeAlumnosComponent, ProfileComponent, AboutComponent],
   imports: [
     CommonModule,
     SharedModule,

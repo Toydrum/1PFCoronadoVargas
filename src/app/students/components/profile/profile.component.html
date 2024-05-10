@@ -1,13 +1,15 @@
-<mat-card class="example-card">
-  <mat-card-header>
+<div class="d-flex justify-content-center m-5 p-5">
+  <mat-card class="example-card">
+    <mat-card-header>
 
-    <mat-card-title>{{activeUser?.nombre}} {{activeUser?.apellido}}</mat-card-title>
-    <mat-card-subtitle>{{activeUser?.credencial}}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>Role: {{activeUser?.role}}</p>
-    <p>Carrier: {{activeUser?.carrera}}</p>
+      <mat-card-title>{{activeUser?.nombre}} {{activeUser?.apellido}}</mat-card-title>
+      <mat-card-subtitle>{{activeUser?.credencial}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="mt-2">
+      <p>Role: {{activeUser?.role}}</p>
+      <p>Carrier: {{activeUser?.carrera}}</p>
 
-  </mat-card-content>
+    </mat-card-content>
 
-</mat-card>
+  </mat-card>
+</div>

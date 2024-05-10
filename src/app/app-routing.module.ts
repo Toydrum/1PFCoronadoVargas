@@ -8,6 +8,7 @@ import { ErrorComponent } from './core/components/error/error.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/articles', pathMatch: 'full' },
+  { path: 'about', redirectTo: '/about', pathMatch: 'full' },
   {
     path: 'students',
     /* component: ProfileComponent, */
